@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    EDIT
+{% endblock %}
+
+{% block main %}
+    
+    <body>
+        <h1>EDIT REMINDER</h1>
+        <form action="/update/{{reminder[0][0]}}" method="POST" class="border border-primary login-form bg bg-light">
+
+            <p class="text-muted">TITLE</p>
+            <input class="form-control " type="text" name="title" value="{{reminder[0][1]}}" placeholder="ENTER TITLE"/>
+
+            <p class="text-muted">DESCRIPTION</p>
+            <input class="form-control " type="text" name="description" value="{{reminder[0][2]}}" placeholder="ENTER DESCRIPTION"/>
+
+            <p class="text-muted">DATE</p>
+            <input class="form-control " type="date" name="date" value="{{reminder[0][3]}}"/>
+
+            <input class="btn btn-primary" type="submit" value="UPDATE" />
+        </form>
+    </body>
+{% endblock %}

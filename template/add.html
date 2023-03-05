@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    ADD
+{% endblock %}
+
+{% block main %}
+    
+    <body>
+        <h1>NEW REMINDER</h1>
+        <form action="/add" method="POST" class="border border-primary login-form bg bg-light">
+
+            <p class="text-muted">TITLE</p>
+            <input class="form-control " type="text" name="title" placeholder="ENTER TITLE" />
+
+            <p class="text-muted">DESCRIPTION</p>
+            <input class="form-control " type="text" name="description" placeholder="ENTER DESCRIPTION" />
+            
+            <p class="text-muted">DATE</p>
+            <input class="form-control " type="date" name="date" />
+
+            <input class="btn btn-primary" type="submit" value="CREATE" />
+        </form>
+    </body>
+{% endblock %}

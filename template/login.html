@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block main %}
+
+    <body >
+        
+        <form action="/login" method="POST" class="border border-primary login-form bg bg-light">
+            <h1>LOGIN</h1>
+            <p class="text-muted">ENTER USERNAME:</p>
+            <p class="text-muted">{{smsUsername}}</p>
+            <input class="form-control" type="text" name="username" />
+            <p class="text-muted">ENTER PASSWORD:</p>
+            <p class="text-muted">{{smsPasswor}}</p>
+            <input class="form-control" type="password" name="password" />
+            <input class="btn btn-primary" type="submit" value="LOG IN" />
+        </form>
+    </body>
+
+{% endblock %}

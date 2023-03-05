@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+HOME In
+{% endblock %}
+
+{% block main %}
+
+<section class="reminders">
+    <h1>MY REMINDERS</h1>
+    <div class="row justify-content-center">
+
+        <div class="card">
+            <div class="card-header">
+                <h3>REMINDERS</h3>
+            </div>
+            <div class="card-body  btn btn-primary add-body" style="background-color: rgb(0, 0, 107) !important; border: solid 0px !important;">
+                <a href="/add" class="add">+ADD</a>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+              
+                </div>
+            </div>
+        </div>
+
+        {% for reminder in reminders %}
+
+        <div class="card">
+            <div class="card-header">
+                <h3>{{reminder[1]}}</h3>
+            </div>
+            <div class="card-body">DESCRIPTION
+                <h4>{{reminder[2]}}</h4>
+                DATE
+                <h5>{{reminder[3]}}</h5>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <a class="btn btn-secondary" href="/update/{{reminder[0]}}">UPDATE</a>
+                    <a class="btn btn-danger" href="/delete/{{reminder[0]}}">DELETE</a>
+                </div>
+            </div>
+        </div>
+
+        {%endfor%}
+    </div>
+   
+</section>
+
+{% endblock %}
